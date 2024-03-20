@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GFM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="RQ9XT_elFhn5YWAq2NDs6-transformed.png">
+    <script>
+      // Check session state on page load
+      let logined = document.querySelector("join_icon");
+      window.onload = function() {
+          checkSession();
+          displayStoredName();
+      };
+
+      function checkSession() {
+          var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+          if (isLoggedIn === 'true') {
+              // User is logged in, show relevant content
+              // document.getElementById('loggedInContent').style.display = 'block';
+              // document.getElementById('loginRequiredMessage').style.display = 'none';
+              // logined.innerHTML='<img src="user-circle-icon-png.png" style="height: 40px;">';
+              document.getElementById('loggedInContent').style.display = 'flex';
+                document.getElementById('loginRequiredMessage').style.display = 'none';
+              
+              
+          } else {
+              // User is not logged in, show login required message
+              // logined.innerHTML='<h3>Login</h3>';
+              document.getElementById('loggedInContent').style.display = 'none';
+                document.getElementById('loginRequiredMessage').style.display = 'flex';
+              
+          }
+      }
+      function displayStoredName() {
+            var storedName = localStorage.getItem('lname');
+            var outputDiv = document.getElementById('nameOutput');
+            outputDiv.textContent =storedName;
+        }
+  </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">GFM<span>.</span></a>
+        <ul class="navigation">
+            <li><a href="Equipment.html">Equipment</a></li>
+            <li><a href="tractor.html">Tractor</a></li>
+            <li><a href="harvester.html" >Harvester</a></li>
+            
+            <li><a href="#" style="color:#68bc14">Combo</a></li>
+            
+            <li><a href="login.html" class="cartIcon"><img src="add-cart_6445100.png" alt=""></a></li>
+            <li class="logined" id="loggedInContent"><img src="user-circle-icon-png.png" style="height: 40px;">
+            </div><div class="nameOutput"><div id="nameOutput"></div><hr><a href="logout.html" style="font-size: 1rem;">Logout</a></div></li>
+            <li><a href="login.html" class="join_icon" id="loginRequiredMessage"><h3>Login</h3></a></li>
+        </ul>
+    </header>
+    <section class="BrowseE" style="margin-top: 0;">
+
+        <div class="Btitle"><h1>Combo</h1></div>
+        <div class="browse-container">
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product/disc-super-seeder.webp" style="padding: 0 15px;" alt="">
+                <h3>Seeder + John Deer Tractor 80HP</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(2,020)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>900/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product\1440x640_2022_herospot_images_web_150_.jpg" alt="">
+                <h3>Early Riser 2000 Series Planter + Tractor 100HP</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,324)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>1000/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product\1_Zcm85Wt1KYlJi8KfHDEhCw.jpg" alt="">
+                <h3>John Deere Db Planter + Tractor 140HP</h3>
+                <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,029)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>1000/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product\1_xXsXfGDGB08dIKtb8LcuiQ.webp" alt="">
+                <h3>Roller range + John Deer Tractor 90HP</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(953)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>900/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product\236598-john-deere-tractor-farm-industrial-farming-1jdeere-construction.jpg" alt="">
+                <h3>John Deere S Series Harvester + Tractor 70HP + Trolley</h3>
+                <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(2,417)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>2000/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct" style="height: 320px;">
+                <img src="product\ag-equipment-types-harvester-tractor.jpg" alt="">
+                <h3>John Deere S680 Combine + Tractor 80HP + Trolley</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(3,189)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>1800/Day</h2>
+                
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+         <div class="row">
+           <div class="footer-col">
+             <h4>company</h4>
+             <ul>
+               <li><a href="#about">about us</a></li>
+               <li><a href="">our services</a></li>
+               <li><a href="">privacy policy</a></li>
+               <li><a href="login.html">affiliate program</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>get help</h4>
+             <ul>
+               <li><a href="">FAQ</a></li>
+               
+               <li><a href="login.html">cancellation</a></li>
+               <li><a href="login.html">order status</a></li>
+               <li><a href="login.html">payment options</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Equipment</h4>
+             <ul>
+               
+               <li><a href="Equipment.html">parts</a></li>
+               <li><a href="harvester.html">Harvester</a></li>
+               <li><a href="tractor.html">tractor</a></li>
+               <li><a href="combo.html">combo</a></li>
+               <li><a href="jcb.html">jcb</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>follow us</h4>
+             <div class="social-links">
+               <a href=""></a>
+               <a href=""></a>
+               <a href=""></a>
+               <a href=""></a>
+             </div>
+           </div>
+         </div>
+        </div>
+        <p>&copy;2024 GFM | All Rights Reserved</p>
+     </footer>
+</body>
+</html>

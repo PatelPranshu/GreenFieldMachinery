@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GFM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="RQ9XT_elFhn5YWAq2NDs6-transformed.png">
+    <script>
+      // Check session state on page load
+      let logined = document.querySelector("join_icon");
+      window.onload = function() {
+          checkSession();
+          displayStoredName();
+      };
+
+      function checkSession() {
+          var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+          if (isLoggedIn === 'true') {
+              // User is logged in, show relevant content
+              // document.getElementById('loggedInContent').style.display = 'block';
+              // document.getElementById('loginRequiredMessage').style.display = 'none';
+              // logined.innerHTML='<img src="user-circle-icon-png.png" style="height: 40px;">';
+              document.getElementById('loggedInContent').style.display = 'flex';
+                document.getElementById('loginRequiredMessage').style.display = 'none';
+              
+              
+          } else {
+              // User is not logged in, show login required message
+              // logined.innerHTML='<h3>Login</h3>';
+              document.getElementById('loggedInContent').style.display = 'none';
+                document.getElementById('loginRequiredMessage').style.display = 'flex';
+              
+          }
+      }
+      function displayStoredName() {
+            var storedName = localStorage.getItem('lname');
+            var outputDiv = document.getElementById('nameOutput');
+            outputDiv.textContent =storedName;
+        }
+  </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">GFM<span>.</span></a>
+        <ul class="navigation">
+            <li><a href="Equipment.html">Equipment</a></li>
+            <li><a href="#" style="color:#68bc14">Tractor</a></li>
+            <li><a href="harvester.html">Harvester</a></li>
+            
+            <li><a href="combo.html">Combo</a></li>
+            
+            <li><a href="login.html" class="cartIcon"><img src="add-cart_6445100.png" alt=""></a></li>
+            <li class="logined" id="loggedInContent"><img src="user-circle-icon-png.png" style="height: 40px;">
+            </div><div class="nameOutput"><div id="nameOutput"></div><hr><a href="logout.html" style="font-size: 1rem;">Logout</a></div></li>
+            <li><a href="login.html" class="join_icon" id="loginRequiredMessage"><h3>Login</h3></a></li>
+        </ul>
+    </header>
+    <section class="BrowseE" style="margin-top: 0;">
+
+        <div class="Btitle"><h1>Tractors</h1></div>
+        <div class="browse-container">
+            <div class="browse-container">
+                <div class="Bproduct">
+                    <img src="product/Home-Banner-1a-Tractor-trimmed.png" style="padding: 5px;" alt="">
+                    <h3>John Deer Tractor 50hp</h3>
+                    <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(2,020)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>500/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+
+                </div>
+                <div class="Bproduct">
+                    <img src="product/peakpx.jpg" alt="">
+                    <h3>CASE 2 360 Tractor 170hp</h3>
+                    <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(710)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>1000/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+
+                </div>
+                <div class="Bproduct">
+                    <img src="product\tractor1-scaled-6593b252cd128.jpg" alt="">
+                    <h3>VST 932DI 25hp</h3>
+                    <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,870)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>350/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+                </div>
+                <div class="Bproduct">
+                    <img src="product/AVENGER-100-XT-4WD-Canopy.png" style="padding: 5px 15px;" alt="">
+                    <h3>Avenger 90AH 100hp</h3>
+                    <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,390)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>650/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+                </div>
+                <div class="Bproduct">
+                    <img src="product/tractor_featuredimage_t130_1400px_v2.webp" style="padding: 5px 0;"alt="">
+                    <h3>TYM K129 AC 100hp</h3>
+                    <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,210)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>750/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+                </div>
+                <div class="Bproduct">
+                    <img src="product/eicher-tractor-485.png" style="padding: 1px 7px;" alt="">
+                    <h3>Eicher 485 60hp</h3>
+                    <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,400)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>450/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+                </div>
+                <div class="Bproduct">
+                    <img src="product\bobcat-ct4045-s6c2721-19d2-fc-ko.webp" style="padding: 0 5px;" alt="">
+                    <h3>CTY4045 50hp</h3>
+                    <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(570)</span></div>
+                    <h2 class="cost"><sup>&#8377</sup>400/Day</h2>
+                    
+                    <div class="buy"><a href="#">Add to  Cart</a></div>
+                </div>
+            
+        </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+       <div class="row">
+         <div class="footer-col">
+           <h4>company</h4>
+           <ul>
+             <li><a href="#about">about us</a></li>
+             <li><a href="">our services</a></li>
+             <li><a href="">privacy policy</a></li>
+             <li><a href="login.html">affiliate program</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>get help</h4>
+           <ul>
+             <li><a href="">FAQ</a></li>
+             
+             <li><a href="login.html">cancellation</a></li>
+             <li><a href="login.html">order status</a></li>
+             <li><a href="login.html">payment options</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>Equipment</h4>
+           <ul>
+             
+             <li><a href="Equipment.html">parts</a></li>
+             <li><a href="harvester.html">Harvester</a></li>
+             <li><a href="tractor.html">tractor</a></li>
+             <li><a href="combo.html">combo</a></li>
+             <li><a href="jcb.html">jcb</a></li>
+           </ul>
+         </div>
+         <div class="footer-col">
+           <h4>follow us</h4>
+           <div class="social-links">
+             <a href=""></a>
+             <a href=""></a>
+             <a href=""></a>
+             <a href=""></a>
+           </div>
+         </div>
+       </div>
+      </div>
+      <p>&copy;2024 GFM | All Rights Reserved</p>
+   </footer>
+
+</body>
+</html>

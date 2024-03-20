@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>GFM</title>
+    <link rel="icon" type="image/png" href="RQ9XT_elFhn5YWAq2NDs6-transformed.png">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // let logined = document.querySelector(".join_icon");
+      window.onload = function() {
+          checkSession();
+          displayStoredName();
+          showRedirectMessage();
+      };
+      var isLoggedIn = localStorage.getItem('isLoggedIn')
+
+      function checkSession() {
+          var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+          if (isLoggedIn === 'true') {
+              // User is logged in, show relevant content
+              // document.getElementById('loggedInContent').style.display = 'block';
+              // document.getElementById('loginRequiredMessage').style.display = 'none';
+              // logined.innerHTML='<img src="user-circle-icon-png.png" style="height: 40px;">';
+              document.getElementById('loggedInContent').style.display = 'flex';
+                document.getElementById('loginRequiredMessage').style.display = 'none';
+                
+              
+              
+          } else {
+              // User is not logged in, show login required message
+              // logined.innerHTML='<h3>Login</h3>';
+              document.getElementById('loggedInContent').style.display = 'none';
+                document.getElementById('loginRequiredMessage').style.display = 'flex';
+              
+          }
+      }
+      function displayStoredName() {
+            var storedName = localStorage.getItem('lname');
+            var outputDiv = document.getElementById('nameOutput');
+            outputDiv.textContent =storedName;
+      }
+
+      function getReferrerUrl() {
+        var referrerUrl = document.referrer;
+        return referrerUrl;
+    }
+
+    function showRedirectMessage() {
+        var referrerUrl = getReferrerUrl();
+        var redirectMessage = document.getElementById('loginedpop');
+        if (referrerUrl.includes("login.html")&&isLoggedIn === 'true') {
+            redirectMessage.style.display = "ruby";
+            setTimeout(function() {
+                redirectMessage.style.display = "none";
+            }, 2000);
+        }
+    }
+
+  </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">GFM<span>.</span></a>
+        <ul class="navigation">
+            <li><a href="Equipment.html">Equipment</a></li>
+            <li><a href="tractor.html">Tractor</a></li>
+            <li><a href="Harvester.html">Harvester</a></li>
+            <li><a href="combo.html">Combo</a></li>
+
+            <li><a href="#" class="cartIcon"><img src="add-cart_6445100.png" alt=""></a></li>
+            <li class="logined" id="loggedInContent"><img src="user-circle-icon-png.png" style="height: 40px;">
+              </div><div class="nameOutput"><div id="nameOutput"></div><hr><a href="logout.html" style="font-size: 1rem;">Logout</a></div></li>
+            <li><a href="login.html" class="join_icon" id="loginRequiredMessage"><h3>Login</h3></a></li>
+        </ul>
+    </header>
+    <div class="loginedpop" id="loginedpop">
+        <h2>You are Logined</h2><img src="correct design.png" alt="">
+    </div>
+    <section class="slides">
+        <div class="title1">
+            <div class="title2">
+                <h1>Rent the equipment you need to farm better</h1>
+                <div class="search-container">
+                  <input type="text" id="searchInput" placeholder="Search by Categories...">
+                  <div id="suggestions"></div>
+
+                </div>
+            </div>
+        </div>
+        <img id="image" class="slideimg" src="product\slides\wallpaperflare.com_wallpaper (2).jpg">
+
+        <script>
+            var imageSources =["product/slides/wallpaperflare.com_wallpaper (3).jpg","product/slides/wallpaperflare.com_wallpaper.jpg","product/slides/1440x640_2022_herospot_images_web_150_.jpg"]
+            var index = 0;
+            setInterval (function(){
+            if (index === imageSources.length) {
+                index = 0;
+            }
+            document.getElementById("image").src = imageSources[index];
+            index++;
+            } , 2000);
+
+        </script>
+    </section>
+    <div class="userInfo">
+
+    </div>
+    <section class="BrowseE">
+
+        <div class="Btitle"><h1>Top Selling Products</h1></div>
+        <div class="browse-container">
+            <div class="Bproduct">
+                <img src="product/Home-Banner-1a-Tractor-trimmed.png" style="padding: 5px;" alt="">
+                <h3>John Deer Tractor 50hp</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(2,020)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>500/Day</h2>
+                <div class="tags"><a href="tractor.html" id="Tractor" class="navshort">Tractor</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+
+            </div>
+            <div class="Bproduct">
+                <img src="product/peakpx.jpg" alt="">
+                <h3>CASE 2 360 Tractor 100hp</h3>
+                <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(710)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>1000/Day</h2>
+                <div class="tags"><a href="tractor.html" id="Tractor" class="navshort">Tractor</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+
+            </div>
+            <div class="Bproduct">
+                <img src="product/pngwing.com.png" style="border: 0px solid #a3a3a300;padding: 8px 20px;" alt="">
+                <h3>JCB FastRac towing 90hp</h3>
+                <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,104)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>600/Day</h2>
+                <div class="tags"><a href="jcb.html" id="jcb" class="navshort">JCB</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct">
+                <img src="product\tractor1-scaled-6593b252cd128.jpg" alt="">
+                <h3>VST 932DI 25hp</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,570)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>350/Day</h2>
+                <div class="tags"><a href="tractor.html" id="Tractor" class="navshort">Tractor</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct">
+                <img src="product\129271-wallpaper-entertainment.jpg" alt="">
+                <h3>CLAAS 580 Harvester 120hp</h3>
+                <div class="rating"><span class="stars-container stars-80">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(460)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>1200/Day</h2>
+                <div class="tags"><a href="harvester.html" id="harvester" class="navshort">Harvester</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct">
+                <img src="product\637589658309470243-b75-442v-type-towed-and-hanging-ty-305-235.png" alt="">
+                <h3>Handing type disk harrow</h3>
+                <div class="rating"><span class="stars-container stars-70">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(920)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>300/Day</h2>
+                <div class="tags"><a href="Equipment.html" id="equipment" class="navshort">Equipment</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct">
+                <img src="product\deluxe-hydraulic-reversible-plough.jpg" alt="">
+                <h3>Hydraulic Reversible Plough</h3>
+                <div class="rating"><span class="stars-container stars-70">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(1,020)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>300/Day</h2>
+                <div class="tags"><a href="tractor.html" id="Tractor" class="navshort">Equipment</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+            <div class="Bproduct">
+                <img src="product/disc-super-seeder.webp" style="padding: 0 10px;" alt="">
+                <h3>Seeder+JohnDeer Tractor 80HP</h3>
+                <div class="rating"><span class="stars-container stars-90">★★★★★</span> <span style="margin: 10px 0 0 16px;color: rgb(0, 108, 170);">(2,020)</span></div>
+                <h2 class="cost"><sup>&#8377</sup>900/Day</h2>
+                <div class="tags"><a href="combo.html" id="combo" class="navshort">Combo</a></div>
+                <div class="buy"><a href="#">Add to  Cart</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="Btags">
+      <div class="Btitle"><h1>Popular Categories</h1></div>
+        <div class="tags">
+          <a href="tractor.html" id="Tractor" class="navshort">Tractor</a>
+          <a href="Equipment.html" id="Tractor" class="navshort">Equipment</a>
+          <a href="harvester.html" id="Tractor" class="navshort">Harvester</a>
+          <a href="jcb.html" id="Tractor" class="navshort">JCB</a>
+          <a href="combo.html" id="Tractor" class="navshort">Combo</a>
+      </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+         <div class="row">
+           <div class="footer-col">
+             <h4>company</h4>
+             <ul>
+               <li><a href="#about">about us</a></li>
+               <li><a href="">our services</a></li>
+               <li><a href="">privacy policy</a></li>
+               <li><a href="login.html">affiliate program</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>get help</h4>
+             <ul>
+               <li><a href="">FAQ</a></li>
+               <li><a href="">shipping</a></li>
+               <li><a href="login.html">cancellation</a></li>
+               <li><a href="login.html">order status</a></li>
+               <li><a href="login.html">payment options</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>Equipment</h4>
+             <ul>
+
+               <li><a href="Equipment.html">parts</a></li>
+               <li><a href="harvester.html">Harvester</a></li>
+               <li><a href="tractor.html">tractor</a></li>
+               <li><a href="combo.html">combo</a></li>
+               <li><a href="jcb.html">jcb</a></li>
+             </ul>
+           </div>
+           <div class="footer-col">
+             <h4>follow us</h4>
+             <div class="social-links">
+               <a href=""></a>
+               <a href=""></a>
+               <a href=""></a>
+               <a href=""></a>
+             </div>
+           </div>
+         </div>
+        </div>
+        <p>&copy;2024 GFM | All Rights Reserved</p>
+     </footer>
+     <script src="search.js"></script>
+</body>
+</html>

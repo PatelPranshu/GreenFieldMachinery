@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GFM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="RQ9XT_elFhn5YWAq2NDs6-transformed.png">
+    <script>
+        // Check session state on page load
+        window.onload = function() {
+            checkSession();
+        };
+
+        function checkSession() {
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (isLoggedIn === 'false') {
+                // User is logged in, show relevant content
+                localStorage.setItem('isLoggedIn', 'false');
+                document.getElementById('loggedInContent').style.display = 'block';
+                document.getElementById('loginForm').style.display = 'none';
+            } else {
+                // User is not logged in, show login form
+                document.getElementById('loggedInContent').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            }
+        }
+        function logout() {
+            // Perform logout logic
+            // Clear session state
+            localStorage.setItem('isLoggedIn', 'false');
+            // Redirect to another page or update content as needed
+            checkSession();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">GFM<span>.</span></a>
+        <!-- <ul class="navigation">
+            <li><a href="Equipment.html">Equipment</a></li>
+            <li><a href="tractor.html">Tractor</a></li>
+            <li><a href="Harvester.html">Harvester</a></li>
+            <li><a href="combo.html">Combo</a></li>
+
+            <li><a href="login.html" class="cartIcon"><img src="add-cart_6445100.png" alt=""></a></li>
+        </ul> -->
+    </header>
+    <div id="loggedInContent" style="display: none;">
+        <!-- <h1>Welcome!</h1> -->
+        <button onclick="logout()">Logout</button>
+    </div>
+    <div class="loginForm">
+        <p style="margin-top: 70px;text-align: center; font-size: 2.5rem;">You are logged out.</p>
+        <p style="margin: 10px;text-align: center; font-size: 2rem;">Go to <a href="index.html" onclick="logout()">Home</a></p>
+    </div>
+
+</body>
+</html>

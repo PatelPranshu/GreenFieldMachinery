@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="RQ9XT_elFhn5YWAq2NDs6-transformed.png">
+        <script src="https://apis.google.com/js/api:client.js"></script>
+
+        <script>
+        let googleUser = {};
+        let startApp = function() {
+            gapi.load('auth2', function(){
+
+            auth2 = gapi.auth2.init({
+                client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+                cookiepolicy: 'single_host_origin',
+            });
+            attachSignin(document.getElementById('customBtn'));
+            });
+        };
+
+        function attachSignin(element) {
+            console.log(element.id);
+            auth2.attachClickHandler(element, {},
+                function(googleUser) {
+                document.getElementById('name').innerText = "Signed in: " +
+                    googleUser.getBasicProfile().getName();
+                }, function(error) {
+
+                });
+        }
+        </script>
+
+    </head>
+    <body>
+      <header class="loginHeader">
+        <a href="index.html" class="logo">GFM<span>.</span></a>
+        <ul class="navigation">
+          <li><a href="Equipment.html">Equipment</a></li>
+          <li><a href="tractor.html">Tractor</a></li>
+          <li><a href="harvester.html">Harvestor</a></li>
+
+          <li><a href="combo.html">Combo</a></li>
+
+        </ul>
+
+    </header>
+
+        <div class="loginbox">
+          <div class="elemnt"></div>
+        <div class="elemnt1"></div>
+        <div class="elemnt2"></div>
+        <div class="elemnt3"></div>
+            <div class="LBox" id="LBox">
+                <h2 class="SignTi"><span>S</span>ign&nbsp;<big>U</big>p</h2>
+                <form action="" class="LForm">
+                    <label for="email" class="LText">User Id</label><br>
+                    <input class="YinputId" type="text" id="lname" name="lname" onfocus="this.placeholder=''" onblur="this.placeholder='xyz@xmail.com'" placeholder="xyz@xmail.com" required><br>
+                    <label for="password" class="LText" id="LTextP">Password</label><br>
+                    <input class="YinputPass" type="password" id="password" onfocus="this.placeholder=''" onblur="this.placeholder='@#/Ab13'" placeholder="@#/Ab13" required >
+                    <input id="checkP"type="checkbox">
+                    <span class="checkmark"></span><br>
+                    <p id="demo12" class="passAl"></p>
+                    <div class="LCheckbox">
+                        <input type="checkbox" id="checkTC" checked> I read all <a href="" class="T&C">term & condition</a>.
+                    </div>
+                    <input class="submitB" type="submit" value="Sign Up" onclick="checkPasswordStrength();storeName();login();" style="background-color: #68bc14;">
+                    <input class="submitBL" type="submit" value="Already have a account">
+                    <div id="gSignInWrapper">
+                        Login With:
+                        <div id="customBtn" class="customGPlusSignIn"></div>
+                      </div>
+                      <div id="name"></div>
+                      <script>startApp();</script>
+                      <script src="login_1.js"></script>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container">
+           <div class="row">
+             <div class="footer-col">
+               <h4>company</h4>
+               <ul>
+                 <li><a href="#about">about us</a></li>
+                 <li><a href="">our services</a></li>
+                 <li><a href="">privacy policy</a></li>
+                 <li><a href="login.html">affiliate program</a></li>
+               </ul>
+             </div>
+             <div class="footer-col">
+               <h4>get help</h4>
+               <ul>
+                 <li><a href="">FAQ</a></li>
+
+                 <li><a href="login.html">cancellation</a></li>
+                 <li><a href="login.html">order status</a></li>
+                 <li><a href="login.html">payment options</a></li>
+               </ul>
+             </div>
+             <div class="footer-col">
+               <h4>Equipment</h4>
+               <ul>
+
+                 <li><a href="Equipment.html">parts</a></li>
+                 <li><a href="harvester.html">Harvester</a></li>
+                 <li><a href="tractor.html">tractor</a></li>
+                 <li><a href="combo.html">combo</a></li>
+                 <li><a href="jcb.html">jcb</a></li>
+               </ul>
+             </div>
+             <div class="footer-col">
+               <h4>follow us</h4>
+               <div class="social-links">
+                 <a href=""></a>
+                 <a href=""></a>
+                 <a href=""></a>
+                 <a href=""></a>
+               </div>
+             </div>
+           </div>
+          </div>
+          <p>&copy;2024 GFM | All Rights Reserved</p>
+       </footer>
+
+        <script>
+
+            checkP.onclick= togglePassword;
+
+            function togglePassword()
+            {
+                if(checkP.checked) password.type = "text";
+                else password.type = "password";
+            }
+
+            function checkPasswordStrength() {
+            let passwordInput = document.getElementById("password").value;
+            let strengthText = document.getElementById("password-strength");
+
+            let uppercaseRegex = /[A-Z]/;
+            let lowercaseRegex = /[a-z]/;
+            let numberRegex = /[0-9]/;
+            let specialCharRegex = /[!@#$%^&*()_+[\]{};':"\\|,.<>?]/;
+            let lengthRequirement = passwordInput.length >= 8;
+
+            if (lengthRequirement && uppercaseRegex.test(passwordInput) && lowercaseRegex.test(passwordInput) && numberRegex.test(passwordInput) && specialCharRegex.test(passwordInput)) {
+
+                document.getElementById("demo12").style.color = "#02bb0e";
+                document.getElementById("demo12").innerHTML="Strong password!";
+                window.location.href = 'index.html';
+                event.preventDefault();
+            } 
+            else {
+
+                document.getElementById("demo12").style.color = "#ff5601c3";
+                let elementYinputPassW = document.getElementById("password");
+                elementYinputPassW.classList.toggle("YinputPassWrong");
+                let elementYTPassW = document.getElementById("LTextP");
+                elementYTPassW.classList.toggle("LTextP");
+                document.getElementById("demo12").innerHTML="*It should have at least 8 characters, &nbsp;&nbsp;uppercase, lowercase, number, special &nbsp;&nbsp;&nbsp;character.";
+                event.preventDefault();
+            }
+        }
+        </script>
+    </body>
+</html>
